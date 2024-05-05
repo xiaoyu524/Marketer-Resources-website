@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color:  rgba(255, 111, 145, 0.15);
+}
+
+
+.web-header {
+  top:0;
+  left: 0;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+
+.title img {
+  float: left;
+  height: 84px;
+  width: auto;
+}
+
+.web-header h1 {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 111, 145, 0.8);
+  border: 3px solid rgb(255, 255, 255);
+  padding: 20px;
+  font-size: 45px;
+  font-weight: bold;
+  white-space: nowrap; 
+  font-family: "Ma Shan Zheng", cursive;
+  font-style: normal;
+  
+  }
+
+.title {
+  width: 100%;
+  height: calc(500px - 60px);;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:url(image/bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-position: center;
+  object-fit: cover;
+}
+
+.title p{
+  font-size: 28px;
+  color:#845EC2;
+  font-family: "Jersey 20 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 70px;
+  box-shadow: #ff6f91;
+}
+
+.nav {
+  /* 宽度为100%，使其横向铺满整个容器 */
+  width: 100%;
+  background: linear-gradient(172deg, rgba(214,93,177,1) 0%, rgba(255,111,145,1) 50%, rgba(255,218,95,1) 100%);
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  height: 60px;
+  text-align: center;
+  flex-wrap: nowrap;
+  position: fixed;
+}
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+
+}
+.nav ul li  {
+  display: inline-block; /* 使列表项横向排列 */
+  padding: 10px 0;
+  margin-left:15px;
+  
+}
+.nav ul li a{
+  position: relative;
+  color: rgb(255, 255, 255);
+  display: block;
+  padding: 10px 0;
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.nav ul li a:hover, nav ul li a.active{
+  color:#FFC75F;
+  font-weight: bold;
+}
+
+.nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 1px; /* 确保伪元素在a标签的底部 */
+  width: 100%; /* 伪元素的宽度与a标签相同 */
+  height: 2px; /* 伪元素的高度 */
+  background: #FFC75F; /* 伪元素的背景颜色 */
+  transform: translateY(10px); /* 伪元素初始状态是向上移动了10px */
+  opacity: 0; /* 伪元素初始状态是不透明的 */
+  transition: .5s; /* 过渡效果包括transform属性 */
+}
+
+.nav ul li a:hover::after {
+  transform: translateY(0); /* 鼠标悬停时伪元素移动到正常位置 */
+  opacity: 1; /* 鼠标悬停时伪元素变为不透明 */
+}
+
+
+.nav ul i {
+ padding: 0 2px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  padding: 0 120px;
+}
+
+/* 当URL的哈希指向这些元素时，应用额外的 padding-top */
+#web, #AI, #report,#media,#tool,#PPTtool,#picture,#Palette,#idea,
+:target{
+  padding-top: 80px;
+}
+
+.tools-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.tools-category h2 {
+  width: 150px;
+  padding: 10px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255); /* 注意这里添加了分号 */
+  border-radius: 5px;
+  background-color: #ff6f91;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tools-category .box{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  margin-bottom: -50px;
+
+}
+
+
+.tool-item {
+  left: 0;
+  border: 1px solid rgba(255, 111, 145, 0.15);
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  height: 100px;
+  margin: 30px 0;
+}
+.tool-item img  {
+  float: left;
+  height: 45px;
+  width: 45px;
+
+}
+
+
+.tool-item h3 {
+  margin: 0;
+  color: #383d29;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap; 
+  line-height: 25px;
+  padding-left: 60px;
+  font-family: "Ma Shan Zheng", cursive;
+  font-style: normal;
+  
+}
+
+.box .tool-item p {
+  color: rgba(56, 61, 41, 0.5);
+  font-size: 13px;
+  padding-left: 60px;
+  font-family: "Ma Shan Zheng", cursive;
+  font-style: normal;
+}
+
+.tool-item h3:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+hr {
+  width: 100%;
+  margin-top: 180px;
+  border: 2px solid rgba(255, 111, 145, 0.1) ;
+}
+.footer {
+  width: 100%;
+  background: url(image/fp1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:rgb(255, 255, 255);
+  height:98px; 
+  top: 0;
+  line-height: 98px;
+  text-align: center;
+  font-size:14px;
+  margin-top: 100px;
+ }
+
