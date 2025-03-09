@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(255, 111, 145, 0.15);
+}
+
+.web-header {
+  top: 0;
+  left: 0;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+}
+
+.title img {
+  float: left;
+  height: 84px;
+  width: auto;
+}
+
+.web-header h1 {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 111, 145, 0.8);
+  border: 3px solid rgb(255, 255, 255);
+  padding: 20px;
+  font-size: 45px;
+  font-weight: bold;
+  white-space: nowrap;
+  font-family: "Ma Shan Zheng", cursive;
+  font-style: normal;
+  box-shadow: 0 4px 15px rgba(255, 111, 145, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.web-header h1:hover {
+  transform: translateY(-3px);
+}
+
+.title {
+  width: 100%;
+  height: calc(500px - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(image/bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-position: center;
+  object-fit: cover;
+}
+
+.title p {
+  font-size: 28px;
+  color: #845EC2;
+  font-family: "Jersey 20 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 70px;
+  text-shadow: 2px 2px 4px rgba(132, 94, 194, 0.2);
+}
+
+.nav {
+  width: 100%;
+  background: linear-gradient(172deg, rgba(214,93,177,1) 0%, rgba(255,111,145,1) 50%, rgba(255,218,95,1) 100%);
+  background-size: cover;
+  background-position: center;
+  height: 60px;
+  text-align: center;
+  flex-wrap: nowrap;
+  position: fixed;
+  box-shadow: 0 2px 10px rgba(255, 111, 145, 0.2);
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav ul li {
+  display: inline-block;
+  padding: 10px 0;
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  position: relative;
+  color: rgb(255, 255, 255);
+  display: block;
+  padding: 10px 0;
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav ul li a:hover,
+nav ul li a.active {
+  color: #FFC75F;
+  transform: translateY(-2px);
+}
+
+.nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 100%;
+  height: 2px;
+  background: #FFC75F;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav ul i {
+  padding: 0 2px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  padding: 0 120px;
+  margin-top: 20px;
+}
+
+#web, #AI, #report, #media, #tool, #PPTtool, #picture, #Palette, #idea,
+:target {
+  padding-top: 80px;
+}
+
+.tools-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tools-category h2 {
+  width: 150px;
+  padding: 12px 20px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  background-color: #ff6f91;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(255, 111, 145, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.tools-category h2:hover {
+  transform: translateY(-2px);
+}
+
+.tools-category .box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.tool-item {
+  border: 1px solid rgba(255, 111, 145, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  background: white;
+  height: auto;
+  min-height: 100px;
+  box-shadow: 0 4px 6px rgba(255, 111, 145, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(255, 111, 145, 0.15);
+}
+
+.tool-item img {
+  float: left;
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.tool-item:hover img {
+  transform: scale(1.1);
+}
+
+.tool-item h3 {
+  margin: 0;
+  color: #383d29;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 25px;
+  padding-left: 60px;
+  font-family: "Ma Shan Zheng", Arial, cursive;
+  font-style: normal;
+  transition: all 0.3s ease;
+}
+
+.tool-item p {
+  color: rgba(56, 61, 41, 0.5);
+  font-size: 14px;
+  padding-left: 60px;
+  font-family: "Ma Shan Zheng", cursive;
+  font-style: normal;
+  margin-top: 5px;
+}
+
+.tool-item:hover h3 {
+  color: #ff6f91;
+  transform: translateX(5px);
+}
+
+hr {
+  width: 100%;
+  margin-top: 100px;
+  border: 2px solid rgba(255, 111, 145, 0.1);
+}
+
+.footer {
+  width: 100%;
+  background: url(image/fp1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  height: 98px;
+  top: 0;
+  line-height: 98px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 100px;
+  box-shadow: 0 -4px 10px rgba(255, 111, 145, 0.1);
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    padding: 0 60px;
+  }
+  
+  .tool-item {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav ul {
+    opacity: 1;
+    flex-wrap: wrap;
+  }
+  
+  .nav {
+    height: auto;
+    padding: 10px 0;
+  }
+  
+  .web-header h1 {
+    font-size: 28px;
+    padding: 15px;
+  }
+  
+  .title p {
+    font-size: 22px;
+  }
+  
+  .main {
+    padding: 0 20px;
+  }
+  
+  .tool-item {
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  .tools-category h2 {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .web-header h1 {
+    font-size: 24px;
+    padding: 12px;
+  }
+  
+  .title p {
+    font-size: 18px;
+    line-height: 50px;
+  }
+  
+  .tool-item {
+    padding: 15px;
+  }
+  
+  .tool-item h3 {
+    font-size: 14px;
+  }
+  
+  .tool-item p {
+    font-size: 12px;
+  }
+  
+  .nav ul li {
+    margin: 0 8px;
+  }
+}
+
+
